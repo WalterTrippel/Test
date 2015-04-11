@@ -10,7 +10,7 @@ int main()
 
     for(wltr::Stack<int>::Iterator it = a.begin(); it != a.end(); ++it)
     {
-        std::cout << "\t" << *it;
+        std::cout << *it;
     }
 
     return 0;

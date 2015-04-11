@@ -109,9 +109,11 @@ namespace wltr
     {
         std::vector<const void *> vec;
 
-        for(T i : list)
+        typename std::initializer_list<T>::iterator it = list.begin();
+
+        for(; it != list.end(); ++it)
         {
-            vec.push_back((void *)&i);
+            vec.push_back((void *)&*it);
         }
 
         pimpl = new VoidStack(vec, sizeof(T));
