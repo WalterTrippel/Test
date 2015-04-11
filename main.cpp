@@ -13,6 +13,11 @@ int main()
         std::cout << *it;
     }
 
+    a.pop();
+    a.pop();
+    a.pop();
+    std::cout << "\t" << a[0];
+
     return 0;
 }
 

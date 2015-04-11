@@ -10,7 +10,7 @@ namespace wltr
     private:
         std::string ex;
     public:
-        StackException() {ex = std::string("Stack Exception occured!");}
+        StackException() {ex = std::string("Stack is empty!");}
         StackException(std::string ex) {this->ex = std::string(ex);}
 
         const char * what() const throw()
@@ -36,6 +36,7 @@ namespace wltr
 
         Stack & operator = (const Stack & other);
         Stack & operator = (Stack && other);
+        T & operator [](int num) const;
 
         virtual ~Stack();
 
@@ -194,6 +195,13 @@ namespace wltr
         StackIterator<void *> tmp = pimpl->end();
         return *(StackIterator<T> *)&tmp;
     }
+
+    template<typename T>
+    T & Stack<T>::operator [] (int num) const
+    {
+        return *(begin() + num);
+    }
+
 
 }
 

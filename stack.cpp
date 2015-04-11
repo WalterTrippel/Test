@@ -258,6 +258,9 @@ namespace wltr
 
     void VoidStack::StackImpl::rangednextImpl(void *&pointer, int num) const
     {
+        if(num < 0)
+            throw StackException("Out of range!");
+
         Node * p = top;
         for(int i = 0; i < num; ++i)
         {
@@ -268,6 +271,7 @@ namespace wltr
             else
                 throw StackException("Out of range!");
         }
+
         pointer = (void *)p;
     }
 
