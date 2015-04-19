@@ -1,22 +1,18 @@
-#include "stack.h"
-#include "book.h"
-
+#include "sqlretriver.h"
 
 
 int main()
 {
+    using wltr::Book;
 
-    wltr::Stack<int> a{1, 3, 7};
+    wltr::Stack<Book> a;
 
-    for(wltr::Stack<int>::Iterator it = a.begin(); it != a.end(); ++it)
+    wltr::fnc::retrieveData(a);
+
+   for(wltr::Stack<Book>::Iterator it = a.begin(); it != a.end(); ++it)
     {
         std::cout << *it;
     }
-
-    a.pop();
-    a.pop();
-    a.pop();
-    std::cout << "\t" << a[0];
 
     return 0;
 }

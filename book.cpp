@@ -3,8 +3,7 @@
 namespace wltr
 {
 
-    Book::Book():author(nullptr),
-                 name(nullptr)
+    Book::Book()
     {
 
     }
@@ -31,7 +30,6 @@ namespace wltr
                                 maingenre(other.maingenre), fictiongenre(other.fictiongenre),
                                   nonfictiongenre(other.nonfictiongenre)
     {
-
     }
 
     Book & Book::operator = (const Book & other)

@@ -1,8 +1,9 @@
 TEMPLATE = app
 CONFIG += console
 CONFIG -= app_bundle
-CONFIG -= qt
 CONFIG += c++11
+
+LIBS += -lmysqlcppconn
 
 SOURCES += main.cpp \
     stack.cpp \
@@ -15,5 +16,6 @@ qtcAddDeployment()
 HEADERS += \
     basestack.h \
     book.h \
-    stack.h
+    stack.h \
+    sqlretriver.h
 
